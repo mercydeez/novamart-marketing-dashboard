@@ -197,23 +197,6 @@ The dashboard will open automatically in your browser at `http://localhost:8501`
 
 ---
 
-## 📱 Screenshots
-
-<div align="center">
-
-### Campaign Performance Dashboard
-![Campaign Dashboard](https://via.placeholder.com/800x400/1f77b4/ffffff?text=Campaign+Performance+Dashboard)
-
-### Customer Analytics
-![Customer Analytics](https://via.placeholder.com/800x400/2ca02c/ffffff?text=Customer+Analytics+Dashboard)
-
-### ML Model Performance
-![ML Models](https://via.placeholder.com/800x400/ff7f0e/ffffff?text=ML+Model+Performance)
-
-</div>
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
