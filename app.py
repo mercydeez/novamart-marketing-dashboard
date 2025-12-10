@@ -40,11 +40,14 @@ st.markdown("""
         color: white;
     }
     .insight-box {
-        background-color: #f0f2f6;
-        padding: 1rem;
+        background-color: #e8f1ff;  /* stronger contrast than plain white */
+        padding: 1rem 1.2rem;
         border-radius: 0.5rem;
         border-left: 4px solid #1f77b4;
         margin: 1rem 0;
+        color: #1f2933;            /* darker text for readability */
+        box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+        font-size: 0.95rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -92,9 +95,24 @@ data = load_data()
 if data is None:
     st.stop()
 
-# Sidebar
-st.sidebar.image("https://via.placeholder.com/200x80/1f77b4/ffffff?text=NovaMart", use_container_width=True)
-st.sidebar.title("🎯 Dashboard Controls")
+# Sidebar (updated – no image, clean header + link)
+st.sidebar.markdown("""
+<div style='text-align:center; padding:10px 0;'>
+    <h2 style='color:#1f77b4; margin-bottom:0;'>NovaMart</h2>
+    <p style='color:#4a5568; font-size:13px; margin-top:2px;'>
+        Marketing Analytics Dashboard
+    </p>
+    <p style='font-size:12px; margin-top:6px;'>
+        <a href="https://github.com/mercydeez/novamart-marketing-dashboard" 
+           target="_blank" 
+           style="color:#3182ce; text-decoration:none;">
+            View project on GitHub ↗
+        </a>
+    </p>
+</div>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("### 🎯 Dashboard Controls")
 
 # Date filter
 date_range = st.sidebar.date_input(
