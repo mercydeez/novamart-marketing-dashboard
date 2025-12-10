@@ -7,6 +7,7 @@ import numpy as np
 from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
+import os
 
 # Page configuration
 st.set_page_config(
@@ -53,19 +54,20 @@ st.markdown("""
 def load_data():
     """Load all datasets with error handling"""
     try:
-        campaign = pd.read_csv('data/campaign_performance.csv')
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        campaign = pd.read_csv(os.path.join(BASE_DIR, 'data', 'campaign_performance.csv'))
         campaign['date'] = pd.to_datetime(campaign['date'])
         
-        customer = pd.read_csv('data/customer_data.csv')
-        product = pd.read_csv('data/product_sales.csv')
-        lead_scoring = pd.read_csv('data/lead_scoring_results.csv')
-        feature_importance = pd.read_csv('data/feature_importance.csv')
-        learning_curve = pd.read_csv('data/learning_curve.csv')
-        geographic = pd.read_csv('data/geographic_data.csv')
-        attribution = pd.read_csv('data/channel_attribution.csv')
-        funnel = pd.read_csv('data/funnel_data.csv')
-        journey = pd.read_csv('data/customer_journey.csv')
-        correlation = pd.read_csv('data/correlation_matrix.csv')
+        customer = pd.read_csv(os.path.join(BASE_DIR, 'data', 'customer_data.csv'))
+        product = pd.read_csv(os.path.join(BASE_DIR, 'data', 'product_sales.csv'))
+        lead_scoring = pd.read_csv(os.path.join(BASE_DIR, 'data', 'lead_scoring_results.csv'))
+        feature_importance = pd.read_csv(os.path.join(BASE_DIR, 'data', 'feature_importance.csv'))
+        learning_curve = pd.read_csv(os.path.join(BASE_DIR, 'data', 'learning_curve.csv'))
+        geographic = pd.read_csv(os.path.join(BASE_DIR, 'data', 'geographic_data.csv'))
+        attribution = pd.read_csv(os.path.join(BASE_DIR, 'data', 'channel_attribution.csv'))
+        funnel = pd.read_csv(os.path.join(BASE_DIR, 'data', 'funnel_data.csv'))
+        journey = pd.read_csv(os.path.join(BASE_DIR, 'data', 'customer_journey.csv'))
+        correlation = pd.read_csv(os.path.join(BASE_DIR, 'data', 'correlation_matrix.csv'))
         
         return {
             'campaign': campaign,
